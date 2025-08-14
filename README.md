@@ -1,45 +1,68 @@
+# 🧾 Personal Expense Tracker (CLI App)
 
-Personal Expense Tracker
+A command-line application to help users **track daily expenses** and **analyze spending patterns**.
 
-Project Goal: Build a command-line application that helps users track their daily expenses and analyze spending patterns.
-Core Features to Implement:
+---
 
-1. Add Expenses
+## 🎯 Project Goal
 
-    Prompt user for expense amount and description
-    Save expenses with timestamps to a CSV file
+Build a Python-based CLI tool that lets users:
 
-2. View Expenses
+- Add and view expenses
+- Analyze spending trends
+- Save and load data from a CSV file
 
-    Display all expenses or filter by date range
-    Show expenses by category
-    Format output in a readable table
+---
 
-3. Spending Analysis
+## ✅ To-Do List
 
-    Calculate total spending for different time periods (daily, weekly, monthly)
-    Show spending breakdown by category with percentages
-    Find the highest and lowest expenses
+### 📌 Core Features
 
-4. Data Persistence
+- [ ] **Add Expenses**
+  - [ ] Prompt user for expense amount and description
+  - [ ] Save each expense with timestamp to a CSV file
 
-    Save all data to a CSV file that persists between program runs
-    Load existing data when the program starts
+- [ ] **View Expenses**
+  - [ ] Display all expenses
+  - [ ] Filter expenses by date range
+  - [ ] Group or display by category
+  - [ ] Format output in a readable table
 
-Technical Skills They'll Practice:
+- [ ] **Spending Analysis**
+  - [ ] Calculate total spending (daily, weekly, monthly)
+  - [ ] Breakdown spending by category with percentages
+  - [ ] Identify highest and lowest expenses
 
-    File I/O operations (reading/writing CSV files)
-    Data structures (lists, dictionaries)
-    String formatting and user input handling
-    Date/time manipulation with the datetime module
-    Basic data analysis and calculations
-    Error handling for invalid inputs
-    Menu-driven program structure
+- [ ] **Data Persistence**
+  - [ ] Save all data to a persistent CSV file
+  - [ ] Load existing data when the program starts
 
-Bonus Challenges:
+---
 
-    Add expense categories validation
-    Implement expense editing/deletion
-    Create simple data visualizations with matplotlib
-    Add budget limits with warnings when exceeded
+## 🛠 Technical Skills You'll Practice
 
+- [ ] File I/O (CSV reading/writing)
+- [ ] Python data structures (lists, dictionaries)
+- [ ] String formatting & user input handling
+- [ ] Date and time manipulation (`datetime` module)
+- [ ] Basic data analysis and calculations
+- [ ] Error handling for invalid input
+- [ ] Menu-driven program design
+
+---
+
+## 🌟 Bonus Challenges
+
+- [ ] Add category validation
+- [ ] Implement expense editing and deletion
+- [ ] Create basic visualizations using `matplotlib`
+- [ ] Add budget limits and show warnings when exceeded
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repo
+2. Run the Python script:  
+   ```bash
+   python expense_tracker.py
