@@ -6,7 +6,6 @@ import pandas as pd
 
 
 
-
 def addExpenses():
     while True:
         description = input("Enter the description of the expense: ").strip()
@@ -25,18 +24,25 @@ def addExpenses():
             break
         except ValueError:
             print("Invalid amount, please choose a valid number")
-
     with open("expenses.csv", "a") as f:
         writer = csv.writer(f)
         writer.writerow([description, expenseAmount])
 
+
+
+
+def viewExpenses():
     with open("expenses.csv", "r") as f:
         text = f.readlines()
         for text in text:
             print(text)
 
+
+
+
+
 if __name__ == '__main__':
     addExpenses()
-
+    viewExpenses()
 
 
