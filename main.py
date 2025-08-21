@@ -7,6 +7,7 @@ import time
 
 
 
+
 def addExpenses():
     while True:
         description = input("Enter the description of the expense: ").strip()
@@ -54,6 +55,7 @@ def addExpenses():
         writer = csv.writer(f)
         writer.writerow([recordDate,description, expenseAmount,category, userDate])
 
+
 def viewExpenses():
     with open("expenses.csv", "r") as f:
         reader = csv.reader(f)
@@ -71,8 +73,6 @@ def viewExpenses():
             print("-" * 50)
 
 
-
-
 def spendingAnalysis():
     with open("expenses.csv", "r") as f:
         reader = csv.reader(f)
@@ -83,7 +83,6 @@ def spendingAnalysis():
         categories = []
         categorySpent = []
         totalSpent =0
-
 
 
         for r in reader:
@@ -120,27 +119,63 @@ def spendingAnalysis():
         print("The lowest expense is: $" + str(lowestExpense) + ", recorded on " + lowestRecorded)
 
 
+def edit_delete_expenses():
+    while True:
+        edit_or_delete = input("Would you like to edit or delete an expense (E/D): ").lower()
+        if edit_or_delete == "e":
+            desc = input("Enter description of the expense you would like to edit: ").lower()
+            break
+        elif edit_or_delete == "d":
+            desc = input("Enter description of the expense you would like to delete: ").lower()
+            break
+        else:
+            print("Invalid option, please try again")
+
+
+    with open("expenses.csv", "r") as f:
+        reader = csv.reader(f)
+        if(edit_or_delete == "e"):
+            for r in reader:
+                if len(r) < 5:
+                    continue
+                if r[1].lower() == desc:
+                    d = input("Enter new description (or leave blank to keep it): ")
+                    a = input("Enter new amount (or leave blank to keep it): ")
+                    c = input("Enter new Category (or leave blank to keep it): ")
+                    e = input("Enter new expense date (or leave blank to keep it): ")
+
+                    if d != "":
+                        r[1] = d
+                    if a != "":
+                        r[2] = a
+                    if c != "":
+                        r[3] = c
+                    if e != "":
+                        r[4] = e
+
+                    print("Expenses have been edited")
+
+
 
 if __name__ == '__main__':
     while True:
         add = input("Would you like to add a new expense? (Y/N): ")
-        if add == "Y":
+        if add.lower() == "y":
             addExpenses()
             print()
-        elif add == "N":
+        elif add.lower() == "n":
             while True:
                 view = input("Would you like to view the expenses and spending analysis? (Y/N): ")
-                if view == "Y":
+                if view.lower() == "y":
                     viewExpenses()
                     print("\n")
                     spendingAnalysis()
                     print()
                     break
-                elif view == "N":
+                elif view.lower() == "n":
                     print("Thank you for using this program")
                     exit()
                 else:
                     print("Invalid input, please try again")
         else:
             print("Invalid input, please try again")
-
