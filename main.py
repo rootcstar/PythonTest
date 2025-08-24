@@ -25,8 +25,6 @@ def insertExpense():
             print(f"Error: {e}")
             continue
 
-
-
     print("Expense created successfully:")
     print(f"Name: {expense.name}")
     print(f"Category: {expense.category}")
