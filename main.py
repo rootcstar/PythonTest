@@ -93,12 +93,12 @@ def old_addExpenses():
             continue
 
     recordDate = time.ctime(int(time.time()))
-    with open("outputs/expenses.csv", "a") as f:
+    with open("database/expenses.csv", "a") as f:
         writer = csv.writer(f)
         writer.writerow([recordDate,description, expenseAmount,category, userDate])
 
 def viewExpenses():
-    with open("outputs/expenses.csv", "r") as f:
+    with open("database/expenses.csv", "r") as f:
         reader = csv.reader(f)
         print("=" * 50)
         print("           YOUR EXPENSES")
@@ -114,7 +114,7 @@ def viewExpenses():
             print("-" * 50)
 
 def spendingAnalysis():
-    with open("outputs/expenses.csv", "r") as f:
+    with open("database/expenses.csv", "r") as f:
         reader = csv.reader(f)
         highestExpense = 0
         lowestExpense = None
@@ -168,7 +168,7 @@ def edit_delete_expenses():
         else:
             print("Invalid option, please try again")
 
-    with open("outputs/expenses.csv", "r") as f:
+    with open("database/expenses.csv", "r") as f:
         reader = csv.reader(f)
         if(edit_or_delete == "e"):
             for r in reader:
