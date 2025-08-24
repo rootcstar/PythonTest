@@ -2,7 +2,8 @@ import csv
 import time
 
 from src.Expense import Expense
-from utils.constants import category_types
+from utils.constants import category_types, app_header_art
+
 
 def insertExpense():
     '''FOR ADD EXPENSE'''
@@ -192,6 +193,8 @@ def edit_delete_expenses():
                     print("Expenses have been edited")
 
 if __name__ == '__main__':
+
+    print(app_header_art)
 
     exit(0)
 
