@@ -139,6 +139,7 @@ class Expense:
                 raise
 
 
+
         try:
             with open(AppSettings.EXPENSES_CSV_PATH, "a", newline='') as f:
                 writer = csv.writer(f)
