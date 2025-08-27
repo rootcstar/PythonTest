@@ -259,7 +259,31 @@ def editExpense():
     print("Expense has been updated successfully.\n")
 
 def deleteExpense():
-    pass
+    choose_del = input("Please enter the unique ID of the expense you would like to delete: ")
+    expenseFound = False
+    rows = []
+    with open("outputs/expenses.csv", "r") as f:
+        reader = csv.reader(f)
+        for r in reader:
+            if len(r) < 7:
+                rows.append(r)
+                continue
+
+            if r[0] == choose_del:
+                expenseFound = True
+                print("expense deleted\n")
+            else:
+                rows.append(r)
+
+    if not expenseFound:
+        print("No expense found with that unique ID.")
+        return
+
+    with open("outputs/expenses.csv", "w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(rows)
+
+
 
 if __name__ == '__main__':
     # TODO: ADD MENU FUNCTIONALITY
