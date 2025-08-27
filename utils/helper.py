@@ -7,3 +7,9 @@ def check_none_or_empty_string(value, field_name):
     if value is None or (isinstance(value, str) and value.strip() == ""):
         return False
     return True
+
+def checkAmount(value, field_name):
+    if value is None or not isinstance(value, (int,float)) or value <= 0.0 :
+        return False
+    return True
+
